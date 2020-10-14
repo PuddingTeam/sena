@@ -19,7 +19,7 @@ public class BoarderInsertController {
 
 	final String command = "/insert.bd";
 	final String getPage = "boarder_WriterForm";
-	final String gotoPage = "redirect:/list.bd";
+	final String gotoPage = "redirect:/boarderList.bd";
 	
 	@Autowired    
 	BoarderDao boardDao;

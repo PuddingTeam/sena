@@ -13,7 +13,7 @@ import Admin.model.NoticeDao;
 public class Admin_addNotice {
 	final String command = "addnotices.ad";
 	final String getPage = "add_notice";
-	final String gotoPage = "a_notice";
+	final String gotoPage = "redirect:/addNotice.ad";
 @Autowired
 NoticeDao dao;
 	

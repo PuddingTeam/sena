@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class Music {
 private	int mno;
 private	 String music_title;
-private	String  music_category;
+private	String  music_dj;
 private	String  music_ganre; 
 private	 int music_recount; 
 private	 String  music_image;
@@ -23,29 +23,6 @@ private String old_song;
 private String old_lyics;
 
 
-
-public Music(int mno, String music_title, String music_category, String music_ganre, int music_recount,
-		String music_image, String music_song, String music_singer, String music_lyics, Date music_date,
-		MultipartFile img_upload, MultipartFile song_upload, MultipartFile lyics_upload, String old_img,
-		String old_song, String old_lyics) {
-	super();
-	this.mno = mno;
-	this.music_title = music_title;
-	this.music_category = music_category;
-	this.music_ganre = music_ganre;
-	this.music_recount = music_recount;
-	this.music_image = music_image;
-	this.music_song = music_song;
-	this.music_singer = music_singer;
-	this.music_lyics = music_lyics;
-	this.music_date = music_date;
-	this.img_upload = img_upload;
-	this.song_upload = song_upload;
-	this.lyics_upload = lyics_upload;
-	this.old_img = old_img;
-	this.old_song = old_song;
-	this.old_lyics = old_lyics;
-}
 public String getOld_img() {
 	return old_img;
 }
@@ -106,12 +83,6 @@ public String getMusic_title() {
 public void setMusic_title(String music_title) {
 	this.music_title = music_title;
 }
-public String getMusic_category() {
-	return music_category;
-}
-public void setMusic_category(String music_category) {
-	this.music_category = music_category;
-}
 public String getMusic_ganre() {
 	return music_ganre;
 }
@@ -157,12 +128,19 @@ public void setMusic_date(Date music_date) {
 public Music() {
 	super();
 }
-public Music(int mno, String music_title, String music_category, String music_ganre, int music_recount,
-		String music_image, String music_song, String music_singer, String music_lyics, Date music_date) {
+public String getMusic_dj() {
+	return music_dj;
+}
+public void setMusic_dj(String music_dj) {
+	this.music_dj = music_dj;
+}
+public Music(int mno, String music_title, String music_dj, String music_ganre, int music_recount, String music_image,
+		String music_song, String music_singer, String music_lyics, Date music_date, MultipartFile img_upload,
+		MultipartFile song_upload, MultipartFile lyics_upload, String old_img, String old_song, String old_lyics) {
 	super();
 	this.mno = mno;
 	this.music_title = music_title;
-	this.music_category = music_category;
+	this.music_dj = music_dj;
 	this.music_ganre = music_ganre;
 	this.music_recount = music_recount;
 	this.music_image = music_image;
@@ -170,8 +148,13 @@ public Music(int mno, String music_title, String music_category, String music_ga
 	this.music_singer = music_singer;
 	this.music_lyics = music_lyics;
 	this.music_date = music_date;
+	this.img_upload = img_upload;
+	this.song_upload = song_upload;
+	this.lyics_upload = lyics_upload;
+	this.old_img = old_img;
+	this.old_song = old_song;
+	this.old_lyics = old_lyics;
 }
-
 
 
 }

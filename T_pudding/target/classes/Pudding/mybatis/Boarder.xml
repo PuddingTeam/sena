@@ -37,6 +37,9 @@
 		<if test="whatColumn=='board_writer'">where board_writer like #{keyword} </if>
 
 	</select>
-  
+  	
+  	<update id="addCount">
+  		update board set board_recount=board_recount+1 where boardno=#{boardno}
+  	</update>
   
 </mapper>

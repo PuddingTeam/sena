@@ -2,10 +2,10 @@ package Music.controller;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStreamReader;
 
 import javax.servlet.ServletContext;
 
@@ -30,11 +30,13 @@ public class Music_content {
 	@RequestMapping(command)
 	public ModelAndView doAction(ModelAndView mav, @RequestParam("mno") int mno ) throws IOException {
 		Music music = dao.getOneData(mno);
+		
 		String uploadtxt = servletcontext.getRealPath("/resources/txt/");
+		System.out.println(uploadtxt);
 		String lyics=null;
 		File file = new File(uploadtxt+music.getMusic_lyics());
 		FileReader filereader = new FileReader(file);
-		BufferedReader bufReader = new BufferedReader(filereader);
+		BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 		String line = "";
 		while((line = bufReader.readLine()) != null){
 			//System.out.println(line);

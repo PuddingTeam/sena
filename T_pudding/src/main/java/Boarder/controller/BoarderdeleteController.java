@@ -12,7 +12,7 @@ import Boarder.model.BoarderDao;
 public class BoarderdeleteController {
 	
 	final String command = "/delete.bd";
-	final String gotoPage = "redirect:/list.bd";
+	final String gotoPage = "redirect:/boarderList.bd";
 	
 	@Autowired    
 	BoarderDao boardDao;

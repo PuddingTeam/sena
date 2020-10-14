@@ -6,6 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+
 <title>Ex Machina by TEMPLATED</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
@@ -24,7 +25,6 @@
 <link rel="stylesheet" href="${path}/resources/css/style-desktop.css" />
 </head>
 <body class="homepage">
-
 	<!-- Header -->
 	<div id="header">
 		<div class="container">
@@ -41,11 +41,11 @@
 				<ul>
 					<li class="active"><a href="${path}/resources/index.html">메인</a></li>
 					<li><a href="${path}/resources/left-sidebar.html">푸딩차트</a></li>
-					<li><a href="${path}/resources/right-sidebar.html">푸딩 DJ</a></li>
-					<li><a href="list.bd">게시판</a></li>
+					<li><a href="Dj.ms">푸딩 DJ</a></li>
+					<li><a href="boarderList.bd">게시판</a></li>
 					<li><a href="${path}/resources/right-sidebar.html">Q&A</a></li>
-					<li><a href="${path}/resources/right-sidebar.html">공지사항</a></li>
-					<li><a href="">로그인</a></li>
+					<li><a href="CNotice.ad">공지사항</a></li>
+					<li><a href="loginForm.me">로그인</a></li>
 					<li><a href="admin.ad">관리자</a></li>
 				</ul>
 			</nav>
@@ -58,7 +58,7 @@
 
 	<section class="carousel" aria-label="Gallery"
 		style="padding-top: 430px; margin-bottom: 15px;">
-		<ol class="carousel__viewport">
+		<ol class="carousel__viewport" style="height: 500px;">
     <li id="carousel__slide1"
         tabindex="0"
         class="carousel__slide">
@@ -147,7 +147,7 @@
 								alt="sq-sample10" />
 							<figcaption>
 								<h2>
-									HOT <span>/ALBUM</span>
+									 <span>HOT</span>
 								</h2>
 							</figcaption>
 							<a href="#"></a>
@@ -165,7 +165,7 @@
 								alt="sq-sample10" />
 							<figcaption>
 								<h2>
-									HIT <span>/ALBUM</span>
+									NEW <span></span>
 								</h2>
 							</figcaption>
 							<a href="#"></a>

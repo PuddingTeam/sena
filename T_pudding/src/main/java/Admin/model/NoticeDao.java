@@ -22,15 +22,27 @@ public class NoticeDao {
 		int cnt = sqlSessionTemplate.selectOne(namespace+".GetTotalCount",map);
 		return cnt;
 	}
-	
+	public int deleteData(int noticeno) {
+		int cnt = sqlSessionTemplate.delete(namespace+".deletedata",noticeno);
+		return cnt;
+	}
 	public List<Notice> getDataList(){
 		List<Notice> lists = new ArrayList<Notice>();
 		lists = sqlSessionTemplate.selectList(namespace+".GetDataList");
 		return lists;
 	}
+	public Notice getOneData(int noticeno){
+		Notice notice=new Notice();
+		notice = sqlSessionTemplate.selectOne(namespace+".getOneData",noticeno);
+		return notice;
+	}
 	
 	public void insertData(Notice notice) {
 		sqlSessionTemplate.insert(namespace+".insertdata",notice);
+	}
+	
+	public void addCount(int noticeno) {
+		sqlSessionTemplate.update(namespace+".addCount",noticeno);
 	}
 	
 }

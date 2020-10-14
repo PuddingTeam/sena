@@ -5,20 +5,26 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="Admin.model.Notice" alias="MyNotice"/>
-		<typeAlias type="Category.model.Category" alias="MyCategory"/>
-		<typeAlias type="Music.model.Music" alias="MyMusic"/>
+		<typeAlias type="Admin.model.Notice" alias="MyNotice" />
+		<typeAlias type="Admin.model.QnA" alias="MyQnA" />
+		<typeAlias type="Music.model.Music" alias="MyMusic" />
+		<typeAlias type="Music.model.Dj" alias="MyDj" />
+		<typeAlias type="Login.model.Customer" alias="MyCustomer" />
 		 <typeAlias type="Boarder.model.Boarder" alias="MyBoarder"/>
-		
+		 <typeAlias type="Music.model.Djmusic" alias="MyDjmusic	"/>
+		 <typeAlias type="Boarder.model.Recontent" alias="MyRecontent"/>
 	</typeAliases>
-	
+
 	<mappers>
-		<mapper resource="Pudding/mybatis/Category.xml"/>
-		<mapper resource="Pudding/mybatis/Notice.xml"/>
-		<mapper resource="Pudding/mybatis/Pudding.xml"/>
-		<mapper resource="Pudding/mybatis/Music.xml"/>
-		<mapper resource="Pudding/mybatis/Boarder.xml"/>
-	<!-- 	<mapper resource="Pudding/mybatis/Board.xml"/> -->
+		<mapper resource="Pudding/mybatis/Notice.xml" />
+		<mapper resource="Pudding/mybatis/member.xml" />
+		<mapper resource="Pudding/mybatis/Pudding.xml" />
+		<mapper resource="Pudding/mybatis/Music.xml" />
+		<mapper resource="Pudding/mybatis/Dj.xml" />
+		<mapper resource="Pudding/mybatis/QnA.xml" />
+		<mapper resource="Pudding/mybatis/Boarder.xml" />
+		<mapper resource="Pudding/mybatis/Recontent.xml"/>
+		<mapper resource="Pudding/mybatis/Djmusic.xml" />
 	</mappers>
 </configuration>
 

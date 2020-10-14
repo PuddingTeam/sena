@@ -24,6 +24,7 @@ public class BoarderContentController {
 	  
 	@RequestMapping(value=command, method=RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam(value="boardno",required=true) int boardno) {		
+		boardDao.addCount(boardno);
 		Boarder lists = boardDao.getoneBoardList(boardno);
 		 ModelAndView mav = new ModelAndView();      
 		 mav.addObject("lists", lists);

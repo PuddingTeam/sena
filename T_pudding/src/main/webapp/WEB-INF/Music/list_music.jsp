@@ -42,7 +42,7 @@
 					<li><a href="admin.ad">회원조회</a></li>
 					<li><a href="addmusic.ad">공지사항추가</a></li>
 					<li><a href="addQA.ad">Q&A추가</a></li>
-					<li><a href="puddinglist.ad">푸딩DJ</a></li>
+					<li><a href="Djlist.ms">푸딩DJ</a></li>
 					<li class="active"><a href="addmusic.ms">노래추가</a></li>
 					<li><a href="finebuylist.ad">구매내역조회</a></li>
 					<li><a href="Main.pd">회원메인</a></li>
@@ -129,7 +129,7 @@
 				${music.music_recount }
 			</td>
 			<td align="center">
-				<a href="delete.ms?num=${music.mno}">삭제</a>
+				<a href="delete.ms?mno=${music.mno}">삭제</a>
 			</td>
 
 		</tr> 

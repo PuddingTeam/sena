@@ -404,9 +404,13 @@ ol, li {
 	/* Don't forget to set this to something that matches the design */
 	a
 	{
-		color: #ff0000;
+		color: black; font-weight: bolder; text-decoration: none;
 	}
-
+	
+a:hover {
+	color: #80471C;
+	text-decoration: underline;
+}
 	sub
 	{
 		position: relative;
@@ -568,7 +572,7 @@ ol, li {
 				color: rgba(255,255,255,.5);
 			}
 			
-			ul.default a:hover
+			ul.default
 			{
 				text-decoration: underline;
 			}
@@ -1195,8 +1199,8 @@ ol, li {
 	{
 		position: relative;
 		padding: 20em 0em;
-	/* background: url(../images/banner.jpg) no-repeat center; */
-	background: #f8d97a;
+	 background: url(../images/banner.jpg) no-repeat center; 
+	/* background: #f8d97a; */
 		background-size: cover;		
 		color: #fff;
 	}
@@ -1390,7 +1394,7 @@ ol, li {
     text-transform: uppercase;
 }
 
-.our-team .team-prof a:hover{
+.our-team .team-prof {
     color:#f15277;
     text-decoration:none;
 }
@@ -1425,7 +1429,7 @@ ol, li {
     background:rgba(0, 0, 0, 0.3);
 }
 
-.our-team .social-link li a:hover{
+.our-team .social-link li {
     background:#333;
     text-decoration:none;
 }

@@ -1,81 +1,90 @@
 
 
-drop sequence music_seq ; --�젣�씪 以묒슂�븳 �쓬�븙 �뀒�씠釉� �떆���뒪
+drop sequence music_seq;
 create sequence music_seq start with 1 increment by 1 nocache;
 
 drop table music;
 create table music(    --�젣�씪以묒슂�븳 �쓬�븙 �뀒�씠釉� 
   mno number primary key,
   music_title varchar2(50) not null,  --�끂�옒�젣紐�
-  music_singer varchar2(50), 
-  music_category varchar2(50) , --移댄뀒
+  music_dj varchar2(50) , --移댄뀒
   music_ganre varchar2(50) not null, 
+  music_recount number,  --議고쉶�닔
   music_image  varchar2(50), --�쓬�븙�븿踰붿씠誘몄�
   music_song  varchar2(50), -- �쓬�븙mp3�뙆�씪
+  music_singer varchar2(50), 
   music_lyics varchar2(50), --媛��궗
-  music_date date,               --�벑濡앹씪
-  music_recount number  --議고쉶�닔
+  music_date date               --�벑濡앹씪
 );
-
-insert into music(mno, music_title,music_singer,music_ganre,music_image,music_song,music_lyics,music_date,music_recount)
- values(music_seq.nextval,'제목','가수','dance','mu.img','mu.mp3','he.txt','2019-12-1',0);
 
 select * from music;
 
-drop sequence notice_seq ;  --怨듭��궗�빆 �떆���뒪
-create sequence notice_seq start with 1 increment by 1 nocache ;
+drop sequence notice_seq;
+create sequence notice_seq start with 1 increment by 1 nocache;
 
 drop table notice;
 create table notice(  --怨듭��궗�빆 �뀒�씠釉� 
   noticeno number primary key,
   notice_title varchar2(50) not null,
   notice_content varchar2(50) ,
-  notice_recount number,     
-  notice_date date
+  notice_recount number,     --怨듭��궗�빆 議고쉶�닔
+notice_date date
 );
 
-drop sequence QA_seq ;   --q&A �떆���뒪
-create sequence QA_seq start with 1 increment by 1 nocache ;
 
-drop table QA;
-create table QA(             
-  QA_no number primary key,    
-  QA_category varchar2(50) not null,
-  QA_date date ,
-  QA_content varchar2(50) 
+drop sequence QnA_seq;
+create sequence QnA_seq start with 1 increment by 1 nocache;
+
+drop table QnA;
+create table QnA(             
+  qna_no number primary key,    
+  qna_category varchar2(50),
+  qna_qustion varchar2(50),
+  qna_answer varchar2(50) 
+);
+
+drop sequence Dj_seq;
+create sequence Dj_seq start with 1 increment by 1 nocache;
+
+drop table Dj;
+create table Dj(             
+  Dj_no number primary key,    
+  Dj_code varchar2(50) not null,
+  Dj_list varchar2(50) 
 );
 
 drop sequence board_seq;
-create sequence board_seq start with 1 increment by 1 nocache ;
+create sequence board_seq start with 1 increment by 1 nocache;
 
 drop table board;
 create table board(  
   boardno number primary key,
-  board_writer varchar2(50),  --�옉�꽦�옄
+  board_writer varchar2(50),  --작성자
   board_passwd varchar2(50),
-  board_title varchar2(50),     --�젣紐�
-  board_date date,          --�벑濡앹씪
-  board_recount number,     --議고쉶�닔
+  board_title varchar2(50),     --제목
+  board_date date,          --등록일
+  board_recount number,     --조회수
   board_content varchar2(50),   
-  board_recontent varchar2(50)   --由ы뵆
+  board_recontent varchar2(50)   --리플
 );
 
-drop sequence recontent_seq;   --�뙎湲� 移댁슫�꽣
-create sequence recontent_seq start with 1 increment by 1 nocache ;
+drop sequence recontent_seq;
+create sequence recontent_seq start with 1 increment by 1 nocache;
 
 drop table recontent;
 create table recontent(  
   recontentno number primary key,
-  recontent_writer varchar2(50),  --�옉�꽦�옄
+  recontent_boardno number,    --글번호
+  recontent_writer varchar2(50),  --작성자
   recontent_passwd varchar2(50),
   recontent_content varchar2(50),
   recontent_date date
   );
   
-drop sequence orders_seq;   --�뙎湲� 移댁슫�꽣
+drop sequence orders_seq;
 create sequence orders_seq start with 1 increment by 1 nocache ;
 
-drop table orders CASCADE CONSTRA S;
+drop table orders CASCADE CONSTRAINTS;
 create table orders(  
   ordersno number primary key,
   orders_id varchar2(50),
@@ -95,7 +104,7 @@ create table orderdetail(
 );
 
 drop sequence customer_seq;  
-create sequence customer_seq start with 1 increment by 1 nocache ;
+create sequence customer_seq start with 1 increment by 1 nocache;
 
 drop table customer;
 create table customer(

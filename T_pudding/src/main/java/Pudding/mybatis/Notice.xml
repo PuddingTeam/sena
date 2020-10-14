@@ -11,6 +11,16 @@ insert into notice values(notice_seq.nextval,#{notice_title},#{notice_content},0
 		select * from notice
 		order by noticeno desc
 	</select>
+	<select id="getOneData" resultType="MyNotice">
+		select * from notice where noticeno=#{noticeno}
+	</select>
+	<delete id="deletedata">
+	delete notice where noticeno=#{noticeno}
+	</delete>
+<update id="addCount">
+update notice set notice_recount=notice_recount+1 where noticeno=#{noticeno}
+</update>
+
 </mapper>
 
 

@@ -7,7 +7,7 @@
     <table border="1" align="center" width="450" cellspacing="0">
     <input type="hidden" name="boardno" value="${lists.boardno }">
     <tr>
-    <td colspan="2" align="right" ><a href="list.bd">글목록</a></td>
+    <td colspan="2" align="right" ><a href="boarderList.bd">글목록</a></td>
     </tr>
       
     <tr>
@@ -33,7 +33,7 @@
     <td colspan="2" align="center">
     <input type="submit" value="수정하기" >
     <input type="reset" value="다시작성">
-    <input type="button" value="목록보기" onClick="location.href='list.bd'">
+    <input type="button" value="목록보기" onClick="location.href='boarderList.bd'">
     
     </td>
 	</tr>

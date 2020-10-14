@@ -9,12 +9,25 @@ insert into music(mno, music_title,music_singer,music_ganre,music_image,music_so
  values(music_seq.nextval,#{music_title},#{music_singer},#{music_ganre},#{music_image},#{music_song},#{music_lyics},#{music_date},0)
 </insert>
 
+<update id="updateDj">
+update music set music_dj=#{djadd.djmusic} where music_title=#{djadd.djtitle}
+</update>
 	<select id="GetDataList" resultType="MyMusic">
 		select * from music order by mno
 	</select>
 	
 	<select id="GetOneData" resultType="MyMusic">
 		select * from music where mno =#{mno}
+	</select>
+	
+		<delete id="delete">
+		delete from music where mno=#{mno}
+	</delete>
+		<select id="selectOne" resultType="MyMusic">
+		select * from music where mno=#{mno}
+	</select>
+		<select id="selectDj" resultType="MyMusic">
+		select * from music where music_dj=#{dj}
 	</select>
 </mapper>
 

@@ -56,5 +56,9 @@ public class BoarderDao {
 		return cnt;
 		
 	}
+	
+	public void addCount(int boardno) {
+		sqlSessionTemplate.update(namespace+".addCount", boardno);
+	}
 
 }

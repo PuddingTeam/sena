@@ -45,7 +45,7 @@
 					<li ><a href="admin.ad">회원조회</a></li>
 					<li><a href="addNotice.ad">공지사항추가</a></li>
 					<li class="active"><a href="addQA.ad">Q&A추가</a></li>
-					<li><a href="puddinglist.ad">푸딩DJ</a></li>
+					<li><a href="Djlist.ms">푸딩DJ</a></li>
 					<li><a href="addmusic.ms">노래추가</a></li>
 					<li><a href="finebuylist.ad">구매내역조회</a></li>
 					<li><a href="Main.pd">회원메인</a></li>
@@ -75,11 +75,12 @@
 							</header>
 					<table border="1" width="100%" align="center" cellspacing="0">
 						<tr>
-							<td colspan="6" align="right">
-								<form action="fineid.ad" method="post"> 조회할 주제 아이디 입력: &nbsp;&nbsp;&nbsp;
-							<input type="text" name="memid"> &nbsp;&nbsp;
-							<input type="submit" value="조회"></td>
-								</form>
+							<th>번호</th>
+							<th>분류</th>
+							<th>질문</th>
+							<th>답</th>
+							<th>삭제</th>
+							<th>수정</th>
 						</tr>
 						<tr>
 							<td> <hr> </td>
@@ -90,16 +91,21 @@
 							<td> <hr></td>
 
 						</tr>
+						<c:forEach items="${lists }" var="qna">
 						<tr>
-							<th>번호</th>
-							<th>분류</th>
-							<th>질문</th>
-							<th>답</th>
+							<td align="center"> ${qna.qna_no } </td>
+							<td align="center"> ${qna.qna_category }  </td>
+							<td align="center"> ${qna.qna_qustion } </td>
+							<td align="center">${qna.qna_answer } </td>
+							<td align="center"><a href="deleteqna.ad?qna_no=${qna.qna_no }"> 삭제</a></td>
+							<td align="center"> 수정</td>
+
 						</tr>
+						</c:forEach>
 								<tr><td> &nbsp; </td></tr>
 						
 								<tr>
-								<td colspan="5" align="right">
+								<td colspan="6" align="right">
 								<input type="button" onclick="location.href='addQnA.ad'" value="Q&A 추가하기">
 								</td>
 							</tr>
